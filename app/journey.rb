@@ -39,67 +39,71 @@ class Journey
 
     def new_user
       puts "Please enter a new username"
-      
-       username = User.new(name: gets.chomp)
-       puts "#{username.name} <== is this correct?"
-       
-       correct = ['Yes', 'No']
-       choice = $prompt.select("Yes or No?\n", correct)
 
-      case choice 
+       username = User.new(name: gets.chomp)
+       msg="#{username.name} <== is this correct?\n"
+
+
+       correct = ['Yes', 'No']
+       choice = $prompt.select(msg, correct)
+
+      case choice
       when 'Yes'
         #username.save
         stress
       when 'No'
-        new_user 
-      end 
+        new_user
+      end
     end
 
     def stress
-      puts "
+      message = "
          ********************************************************
          Which one of these statements do you most resonate with?
-         ********************************************************"
+         ********************************************************\n"
+      choices = [
+        'This is fun!',
+        "This is harder than I thought.",
+        "This is going to be a lot of work.",
+        "This sucks, I have no idea what I am doing.",
+        "#%@!!*!*!!!!",
+        "OK, but it still sucks.",
+        "Quick, let's call it a day and say we learned something.",
+        "Hey, I think I'm actually catching on!",
+        "WOW, look how far I've come!",
+        "This is one of the things I am most proud of."]
+      inputs = $prompt.multi_select(message, choices)
 
-         puts "1. This is fun!"
-         puts "2. This is harder than I thought."
-         puts "3. This is going to be a lot of work."
-         puts "4. This sucks, I have no idea what I am doing."
-         puts "5. #%@!!*!*!!!!"
-         puts "6. OK, but it still sucks."
-         puts "7. Quick, let's call it a day and say we learned something."
-         puts "8. Hey, I think I'm actually catching on!"
-         puts "9. WOW, look how far I've come!"
-         puts "10. This is one of the things I am most proud of."
-
-      choice = gets.chomp
-
-        case choice
-        when 1
+      inputs.each {|input|
+        print "\n"
+        case input
+        when 'This is fun!'
           puts "'Just keep being true to yourself, if you're passionate about something go for it. Don't sacrifice anything, just have fun.'...Blake Lewis"
-        when 2
+        when 'This is harder than I thought.'
           puts "'Live and work but do not forget to play, to have fun in life and really enjoy it.'...Eileen Caddy"
-        when 3
+        when 'This is going to be a lot of work.'
           puts "'When I hear somebody say 'Life is hard', I am always tempted to ask 'Compared to what?'...Sydney Harris"
-        when 4
+        when 'This sucks, I have no idea what I am doing.'
           puts "'Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing or learning to do.'...Pele"
-        when 5
+        when '#%@!!*!*!!!!'
           puts "'I couldn't tell you what I am going to do next 'cause I have no idea, but I am open to anything.'...Lenny Kravitz"
-        when 6
+        when 'OK, but it still sucks.'
           puts "'Drain the swamp.'...Donald Trump"
-        when 7
+        when "Quick, let's call it a day and say we learned something."
           puts "'Technology doesn't address everything - for example, air travel still sucks.'...Brad Feld"
-        when 8
+        when "Hey, I think I'm actually catching on!"
           puts "'I'm only going to get better and better. Not going to get worse.'...Jason Pierre-Paul"
-        when 9
+        when "WOW, look how far I've come!"
           puts "'We know we are on the right path. Our journey is not finished, but we have come a long way.'...Muhammadu Buhari"
-        when 10
+        when "This is one of the things I am most proud of."
           puts "'Honestly, it's the most amazing feeling in the world to be able to work on something that you're really proud of.'...Dania Ramirez"
-
-        else
-          puts "Hmmm...not one of the choices. Please try again."
-          sts_level
+        # else
+        #   puts "Hmmm...not one of the choices. Please try again."
+        #   sts_level
         end
+      }
+      print "\n Press ENTER to continue..."
+      gets
 
       end
     end
