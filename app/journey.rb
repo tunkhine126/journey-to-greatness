@@ -97,13 +97,19 @@ class Journey
           puts "'We know we are on the right path. Our journey is not finished, but we have come a long way.'...Muhammadu Buhari"
         when 10
           puts "'Honestly, it's the most amazing feeling in the world to be able to work on something that you're really proud of.'...Dania Ramirez"
-        # else
-        #   puts "Hmmm...not one of the choices. Please try again."
-        #   sts_level
+        
         end
       }
       print "\n Press ENTER to continue..."
       gets
-
+      
+      journal_entry
       end
+
+      def journal_entry
+        puts "\n"
+        puts "If you were going to encourage someone else who felt this way, what would you want to tell them?"
+      
+      end
+
     end
