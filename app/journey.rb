@@ -37,17 +37,14 @@ class Journey
       choice = gets.chomp
     end
 
-    def new_user (:name)
+    def new_user
       puts "Please enter a new username"
-
+      
        username = User.new(name: gets.chomp)
-       puts username.to_s
-
-       puts "#{username} <== is this correct?"
-
-
-
-       stress
+       puts "#{username.name} <== is this correct?"
+       
+       correct = ['Yes', 'No']
+       choice = $prompt.select("Yes or No?\n", correct)
     end
 
     def stress
