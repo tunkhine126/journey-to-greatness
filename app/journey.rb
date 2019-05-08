@@ -12,7 +12,7 @@ class Journey
 
     def menu
       options = ['Login', 'New user', 'Exit']
-      choice = $prompt.select("Welcome!\n", options)
+      choice = $prompt.select("Are you a existing user?\n", options)
 
       # puts "1. Login"
       # puts "2. New User"
@@ -37,11 +37,17 @@ class Journey
       choice = gets.chomp
     end
 
-    def new_user
+    def new_user (:name)
       puts "Please enter a new username"
 
-      new_user = gets.chomp
-      new_user
+       username = User.new(name: gets.chomp)
+       puts username.to_s
+
+       puts "#{username} <== is this correct?"
+
+
+
+       stress
     end
 
     def stress
