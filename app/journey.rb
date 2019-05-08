@@ -2,24 +2,24 @@ class Journey
 
     def start
       puts "WELCOME TO YOUR JOURNEY TO GREATNESS!"
-      puts "When did you start with your cohort?"
-      
+      puts "Press Enter to Begin!!"
+
       choice = gets.chomp.to_i
 
       menu
 
     end
-  
+
     def menu
       options = ['Login', 'New user', 'Exit']
       choice = $prompt.select("Welcome!\n", options)
 
       # puts "1. Login"
       # puts "2. New User"
-      # puts "3. Exit" 
-  
+      # puts "3. Exit"
+
       # choice = gets.chomp.to_i
-  
+
         case choice
         when 'Login'
           login
@@ -28,27 +28,28 @@ class Journey
         when 'Exit'
           exit
         end
-        
+
       end
 
     def login
       puts "Please enter your username"
 
       choice = gets.chomp
-    end 
+    end
 
     def new_user
       puts "Please enter a new username"
 
-      choice = gets.chomp.to_i
-    end 
+      new_user = gets.chomp
+      new_user
+    end
 
-    def sts_level
+    def stress
       puts "
          ********************************************************
          Which one of these statements do you most resonate with?
-         ********************************************************" 
-         puts "1. This is fun!"    
+         ********************************************************"
+         puts "1. This is fun!"
          puts "2. This is harder than I thought."
          puts "3. This is going to be a lot of work."
          puts "4. This sucks, I have no idea what I am doing."
@@ -58,9 +59,9 @@ class Journey
          puts "8. Hey, I think I'm actually catching on!"
          puts "9. WOW, look how far I've come!"
          puts "10. This is one of the things I am most proud of."
-  
-      choice = gets.chomp.to_i
-  
+
+      choice = gets.chomp
+
         case choice
         when 1
           puts "'Just keep being true to yourself, if you're passionate about something go for it. Don't sacrifice anything, just have fun.'...Blake Lewis"
@@ -72,7 +73,7 @@ class Journey
           puts "'Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing or learning to do.'...Pele"
         when 5
           puts "'I couldn't tell you what I am going to do next 'cause I have no idea, but I am open to anything.'...Lenny Kravitz"
-        when 6 
+        when 6
           puts "'Drain the swamp.'...Donald Trump"
         when 7
           puts "'Technology doesn't address everything - for example, air travel still sucks.'...Brad Feld"
@@ -87,10 +88,6 @@ class Journey
           puts "Hmmm...not one of the choices. Please try again."
           sts_level
         end
-        
+
       end
     end
-
-    
-    
-        
