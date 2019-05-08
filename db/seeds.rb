@@ -5,5 +5,5 @@ Reflection.all.delete_all
 
 
 User.create("Evan Kim", 1)
-Feeling.create(100, 1, 1)
-Reflection.create("anxious", "Today", 1)
+# Feeling.create(100, 1, 1)
+# Reflection.create("anxious", "Today", 1)

@@ -46,6 +46,13 @@ class Journey
        correct = ['Yes', 'No']
        choice = $prompt.select("Yes or No?\n", correct)
 
+      case choice 
+      when 'Yes'
+        #username.save
+        stress
+      when 'No'
+        new_user 
+      end 
     end
 
     def stress
@@ -53,6 +60,7 @@ class Journey
          ********************************************************
          Which one of these statements do you most resonate with?
          ********************************************************"
+
          puts "1. This is fun!"
          puts "2. This is harder than I thought."
          puts "3. This is going to be a lot of work."
