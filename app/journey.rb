@@ -45,6 +45,7 @@ class Journey
        
        correct = ['Yes', 'No']
        choice = $prompt.select("Yes or No?\n", correct)
+
     end
 
     def stress
