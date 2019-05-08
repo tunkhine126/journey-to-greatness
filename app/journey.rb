@@ -5,28 +5,28 @@ class Journey
       puts "When did you start with your cohort?"
       
       choice = gets.chomp.to_i
-      
+
       menu
 
     end
   
     def menu
-      puts "1. Login"
-      puts "2. New User"
-      puts "3. Exit" 
+      options = ['Login', 'New user', 'Exit']
+      choice = $prompt.select("Welcome!\n", options)
+
+      # puts "1. Login"
+      # puts "2. New User"
+      # puts "3. Exit" 
   
-      choice = gets.chomp.to_i
+      # choice = gets.chomp.to_i
   
         case choice
-        when 1
+        when 'Login'
           login
-        when 2
+        when 'New user'
           new_user
-        when 3
-
-        else
-          puts "Hmmm...not one of the choices. Please try again."
-          menu
+        when 'Exit'
+          exit
         end
         
       end
