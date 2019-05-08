@@ -72,7 +72,7 @@ class Journey
         "Hey, I think I'm actually catching on!" => 8,
         "WOW, look how far I've come!" => 9,
         "This is one of the things I am most proud of." => 10}
-      inputs = $prompt.multi_select(message, choices)
+      inputs = $prompt.multi_select(message, choices, echo: false)
 
       inputs.each {|input|
         print "\n"
