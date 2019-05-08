@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20190508151956) do
+
+  create_table "feelings", force: :cascade do |t|
+    t.string  "stress"
+    t.integer "user_id"
+    t.integer "reflection_id"
+  end
+
+  create_table "reflections", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "date"
+    t.integer  "feeling_id"
+  end
 
   create_table "users", force: :cascade do |t|
-    t.text "name"
+    t.string  "name"
+    t.integer "feeling_id"
   end
 
 end
