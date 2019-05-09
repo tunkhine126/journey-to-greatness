@@ -38,9 +38,9 @@ class Journey
     end
 
     def new_user
-      puts "Please enter a new username"
+      puts "Please enter your first name"
 
-       username = User.new(name: gets.chomp.capitalize)
+       username = User.new(name: gets.chomp.capitalize) # => (firstname: gets.chomp.capitalize, lastname: gets.chomp.capitalize, stress: nil, entry: nil)
        msg="#{username.name} <== is this correct?\n"
 
 
@@ -117,7 +117,7 @@ class Journey
         puts "\n"
         puts "take a minute to think about what you want to write."
 
-      #  j_entry = Reflection.new(name: , firstname: username.firstname, lastname: username.lastname, date: userFeeling.date)
+      #  j_entry = Reflection.new(title:"" , firstname: username.firstname, lastname: username.lastname, date: userFeeling.date, stress: userFeeling.stress )
 
 
       end
