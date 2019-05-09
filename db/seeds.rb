@@ -4,7 +4,7 @@ Reflection.all.delete_all
 
 
 evan = User.create(firstname: "Evan", lastname: "Kim", stress: 5)
-tun = User.create(firstname: "Tun", lastname: "Khine", stress: 7) 
+tun = User.create(firstname: "Tun", lastname: "Khine", stress: 7)
 andrew = User.create(firstname: "Andrew", lastname: "Allen", stress: 10)
 
 feel1 = Feeling.create(stress: 5, date: DateTime.now]
