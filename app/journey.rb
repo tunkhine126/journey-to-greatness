@@ -120,7 +120,7 @@ class Journey
         puts "\nIf you were going to encourage someone else who felt this way, what would you want to tell them?\n\nTake a moment to think about what you want to write.\n"
         puts "What's the title of this journal?"
         j_title = gets.chomp
-        j_entry = Reflection.new(title: j_title, firstname: user1.firstname, lastname: user1.lastname, date: userFeel.date, stress: user1.stress)
+        j_entry = Reflection.new(date: userFeel.date, firstname: user1.firstname, lastname: user1.lastname, stress: user1.stress, title: j_title)
 
 
 

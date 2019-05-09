@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20190508151956) do
 
   create_table "reflections", force: :cascade do |t|
     t.datetime "date"
-    t.integer  "feeling_id"
     t.string   "firstname"
     t.string   "lastname"
     t.integer  "stress"
