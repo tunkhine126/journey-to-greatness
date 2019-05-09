@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(version: 20190508151956) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string  "name"
-    t.integer "feeling_id"
+    t.string  "firstname"
+    t.string  "lastname"
+    t.integer "stress"
+    t.string  "entry"
   end
 
 end
