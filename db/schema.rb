@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 20190508151956) do
 
   create_table "feelings", force: :cascade do |t|
-    t.string  "stress"
-    t.integer "user_id"
-    t.integer "reflection_id"
+    t.integer  "reflection_id"
+    t.integer  "stress"
+    t.datetime "date"
   end
 
   create_table "reflections", force: :cascade do |t|
