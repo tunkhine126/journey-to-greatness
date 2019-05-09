@@ -40,7 +40,7 @@ class Journey
     def new_user
       puts "Please enter a new username"
 
-       username = User.new(name: gets.chomp)
+       username = User.new(name: gets.chomp.capitalize)
        msg="#{username.name} <== is this correct?\n"
 
 
@@ -62,24 +62,29 @@ class Journey
          Which one of these statements do you most resonate with?
          ********************************************************\n"
       choices = {
-        'This is fun!' => 1,
-        "This is harder than I thought." => 2,
-        "This is going to be a lot of work." => 3,
-        "This sucks, I have no idea what I am doing." => 4,
-        "#%@!!*!*!!!!" => 5,
-        "OK, but it still sucks." => 6,
-        "Quick, let's call it a day and say we learned something." => 7,
-        "Hey, I think I'm actually catching on!" => 8,
-        "WOW, look how far I've come!" => 9,
-        "This is one of the things I am most proud of." => 10}
-      inputs = $prompt.multi_select(message, choices, echo: false)
+        '1. This is fun!' => 1,
+        "2. This is harder than I thought." => 2,
+        "3. This is going to be a lot of work." => 3,
+        "4. This sucks, I have no idea what I am doing." => 4,
+        "5. #%@!!*!*!!!!" => 5,
+        "6. OK, but it still sucks." => 6,
+        "7. Quick, let's call it a day and say we learned something." => 7,
+        "8. Hey, I think I'm actually catching on!" => 8,
+        "9. WOW, look how far I've come!" => 9,
+        "10. This is one of the things I am most proud of." => 10}
+      input = $prompt.select(message, choices, echo: false)
 
-      inputs.each {|input|
-        print "\n"
+
         case input
         when 1
+          # userFeeling = Feeling.new(stress: 1, date: , )
+          #
+          # userFeeling.save
           puts "'Just keep being true to yourself, if you're passionate about something go for it. Don't sacrifice anything, just have fun.'...Blake Lewis"
         when 2
+          #Feeling.new(stress: 2, date: ,)
+          #
+          # userFeeling.save
           puts "'Live and work but do not forget to play, to have fun in life and really enjoy it.'...Eileen Caddy"
         when 3
           puts "'When I hear somebody say 'Life is hard', I am always tempted to ask 'Compared to what?'...Sydney Harris"
@@ -97,19 +102,24 @@ class Journey
           puts "'We know we are on the right path. Our journey is not finished, but we have come a long way.'...Muhammadu Buhari"
         when 10
           puts "'Honestly, it's the most amazing feeling in the world to be able to work on something that you're really proud of.'...Dania Ramirez"
-        
+
         end
-      }
+
       print "\n Press ENTER to continue..."
       gets
-      
+
       journal_entry
       end
 
       def journal_entry
         puts "\n"
         puts "If you were going to encourage someone else who felt this way, what would you want to tell them?"
-      
+        puts "\n"
+        puts "take a minute to think about what you want to write."
+
+      #  j_entry = Reflection.new(name: , firstname: username.firstname, lastname: username.lastname, date: userFeeling.date)
+
+
       end
 
     end
