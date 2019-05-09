@@ -84,7 +84,7 @@ class Journey
           user1.stress = stress_level
           userFeel = Feeling.new(stress: 1, date: DateTime.now)
           #
-          # userFeeling.save
+          #userFeel.save
           puts "'Just keep being true to yourself, if you're passionate about something go for it. Don't sacrifice anything, just have fun.'...Blake Lewis"
         when 2
           #Feeling.new(stress: 2, date: ,)
@@ -113,19 +113,14 @@ class Journey
       print "\n Press ENTER to continue..."
       gets
 
-      journal_entry(user1, userFeel)
+      journal_entry(user1) 
       end
 
       def journal_entry(user1)
         puts "\nIf you were going to encourage someone else who felt this way, what would you want to tell them?\n\nTake a moment to think about what you want to write.\n"
         puts "What's the title of this journal?"
         j_title = gets.chomp
-        j_entry = Reflection.new(date: userFeel.date, firstname: user1.firstname, lastname: user1.lastname, stress: user1.stress, title: j_title)
-
-
-
-      #  j_entry = Reflection.new(title:"" , firstname: username.firstname, lastname: username.lastname, date: userFeeling.date, stress: userFeeling.stress )
-
+        j_entry = Reflection.new(firstname: user1.firstname, lastname: user1.lastname, stress: user1.stress, title: j_title)
 
       end
 
