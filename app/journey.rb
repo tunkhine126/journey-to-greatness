@@ -32,16 +32,19 @@ class Journey
       end
 
     def login
-      puts "Please enter your username"
+      puts "Please enter your firstname"
 
-      choice = gets.chomp
+      choice = gets.chomp.capitalize
     end
 
     def new_user
       puts "Please enter your first name"
 
-       username = User.new(name: gets.chomp.capitalize) # => (firstname: gets.chomp.capitalize, lastname: gets.chomp.capitalize, stress: nil, entry: nil)
-       msg="#{username.name} <== is this correct?\n"
+       user1 = User.new(firstname: gets.chomp.capitalize) # => (firstname: gets.chomp.capitalize, lastname: gets.chomp.capitalize, stress: nil, entry: nil)
+      puts "Please enter your last name"
+       last_name = gets.chomp.capitalize
+       user1.lastname = last_name
+       msg="#{user1.firstname} #{user1.lastname} <== is this correct?\n"
 
 
        correct = ['Yes', 'No']
@@ -50,13 +53,13 @@ class Journey
       case choice
       when 'Yes'
         #username.save
-        stress
+        stress(user1)
       when 'No'
         new_user
       end
     end
 
-    def stress
+    def stress(user1) #passing down user1
       message = "
          ********************************************************
          Which one of these statements do you most resonate with?
@@ -77,7 +80,9 @@ class Journey
 
         case input
         when 1
-          # userFeeling = Feeling.new(stress: 1, date: , )
+          stress_level = 1
+          user1.stress = stress_level
+          userFeel = Feeling.new(stress: 1, date: DateTime.now)
           #
           # userFeeling.save
           puts "'Just keep being true to yourself, if you're passionate about something go for it. Don't sacrifice anything, just have fun.'...Blake Lewis"
@@ -108,14 +113,16 @@ class Journey
       print "\n Press ENTER to continue..."
       gets
 
-      journal_entry
+      journal_entry(user1, userFeel)
       end
 
-      def journal_entry
-        puts "\n"
-        puts "If you were going to encourage someone else who felt this way, what would you want to tell them?"
-        puts "\n"
-        puts "take a minute to think about what you want to write."
+      def journal_entry(user1)
+        puts "\nIf you were going to encourage someone else who felt this way, what would you want to tell them?\n\nTake a moment to think about what you want to write.\n"
+        puts "What's the title of this journal?"
+        j_title = gets.chomp
+        j_entry = Reflection.new(title: j_title, firstname: user1.firstname, lastname: user1.lastname, date: userFeel.date, stress: user1.stress)
+
+
 
       #  j_entry = Reflection.new(title:"" , firstname: username.firstname, lastname: username.lastname, date: userFeeling.date, stress: userFeeling.stress )
 
