@@ -1,3 +1,57 @@
+# JOURNEY TO GREATNESS README
+
+
+
+# INSPIRATION
+"The Emotional Journey to Creating Anything Great" by John Saddington
+https://john.do/emotional-journey-creating/
+
+# THE WHY
+This app was created to encourage new and current students at the Flatiron School to journal their feelings. Although we have "Feelings Friday" We're all on this journey together and the path is never linear. To experience highs you gotta hit the lows too. Keep working at it and you're own greatness is sure to come. 
+
+"Unfortunately, even though we know that this is the way the journey will be experienced, it does not (and can never) adequately equip us for the ups and downs to come." - John Saddington
+
+# SPECIAL THANKS 
+Special thanks to Andrew Allen for mapping out our vision and all the other students in "GIT LIT" for their advice. 
+
+# CONTRIBUTORS 
+EVAN KIM AND TUN KHINE 
+"GUCCI!" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Module One Final Project Guidelines
 
 Congratulations, you're at the end of module one! You've worked crazy hard to get here and have learned a ton.

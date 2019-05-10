@@ -74,7 +74,7 @@ class Journey
       message = "
          ********************************************************
          Which one of these statements do you most resonate with?
-         ********************************************************\n"
+         ********************************************************\n\n"
       choices = {
         '1. This is fun!' => 1,
         "2. This is harder than I thought." => 2,
@@ -169,7 +169,7 @@ class Journey
         message = "Displaying old reflection entries for #{user.firstname}\n"
         refs = Reflection.all.select {|r| r.user_id == user.id}
         options = refs.map(&:title).reverse
-        # options ||= []
+        
         options << 'Return to main menu'
         
         input = $prompt.select(message, options)
