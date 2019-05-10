@@ -10,26 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190508151956) do
+ActiveRecord::Schema.define(version: 20190509215309) do
 
   create_table "feelings", force: :cascade do |t|
-    t.integer  "stress"
-    t.datetime "date"
+    t.string  "name"
+    t.integer "stress"
   end
 
   create_table "reflections", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "feeling_id"
     t.datetime "date"
-    t.string   "firstname"
-    t.string   "lastname"
-    t.integer  "stress"
     t.string   "title"
+    t.string   "entry"
   end
 
   create_table "users", force: :cascade do |t|
     t.string  "firstname"
     t.string  "lastname"
     t.integer "stress"
-    t.string  "entry"
   end
 
 end

@@ -1,3 +1,4 @@
 class Reflection < ActiveRecord::Base
-  has_many :feelings
+  belongs_to :user
+  belongs_to :feeling
 end

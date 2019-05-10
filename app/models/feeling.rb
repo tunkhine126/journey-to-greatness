@@ -1,4 +1,4 @@
 class Feeling < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :reflection
+  has_many :reflections
+  has_many :reflections, through: :feelings
 end
